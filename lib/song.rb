@@ -5,7 +5,10 @@ class Song
   @@artists = []
   @@genres = []
   @@hash = {}
+<<<<<<< HEAD
   @@hash2 = {}
+=======
+>>>>>>> 763e3fe8b440a29018823e0f6cf5c1b636977961
   
   def initialize(name, artist, genre)
     @name = name
@@ -14,6 +17,17 @@ class Song
     @@count += 1
     @@artists << artist
     @@genres << genre
+<<<<<<< HEAD
+=======
+    if @@hash.key?(genre) == false
+      @@hash[genre] = 1
+    else
+      @@hash.each do |k, v|
+        @@hash[k] = v + 1 if k == genre
+        binding.pry
+      end
+    end
+>>>>>>> 763e3fe8b440a29018823e0f6cf5c1b636977961
   end
   
   def self.count
@@ -29,6 +43,7 @@ class Song
   end
   
   def self.genre_count
+<<<<<<< HEAD
     @@genres.each do |i|
       if @@hash.key?(i)
         @@hash.each {|k, v| @@hash[k] = v + 1 if i == k}
@@ -50,4 +65,9 @@ class Song
     end
     @@hash2
   end
+=======
+    @@hash
+  end
+    
+>>>>>>> 763e3fe8b440a29018823e0f6cf5c1b636977961
 end
